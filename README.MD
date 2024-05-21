@@ -7,7 +7,7 @@
   <li><strong>Texto Generado por IA</strong>: Utiliza IA para crear texto automáticamente y luego conviértelo en audio.</li>
 </ul>
 
-<img src="static/imagenes/readmeHeader.png" widht="180px" height="180px">
+<img src="static/imagenes/opciones.png" widht="200px" height="200px">
 
 <h2>Funcionalidades</h2>
 <ul>
@@ -16,7 +16,7 @@
   <li>Selección de voz entre femenina y masculina.</li>
 </ul>
 
-<img src="static/imagenes/personajes.png" widht="180px" height="180px">
+<img src="static/imagenes/personajes.png" widht="200px" height="200px">
 
 
 <h2>Requisitos</h2>
