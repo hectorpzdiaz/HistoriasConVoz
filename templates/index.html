@@ -1,0 +1,257 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+ 
+    <meta name="viewport" content="width=, initial-scale=1.0">
+ 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../static/imagenes/silueta_logo.png" type="image/png">
+    <script src="https://kit.fontawesome.com/5fbb693df9.js" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://unpkg.com/wavesurfer.js"></script>
+    <link rel="stylesheet" href="static/estilosCss/estilos.css" type="text/css">
+    
+
+    <title>Historias con voz</title>
+</head>
+<body>
+
+        
+<header id="header">
+
+   
+    <div id="intro_caratula">
+    <img id="logo" src="../static/imagenes/silueta_logo.png">
+      <div id="caratula"></div>
+      <img id="imgCaratula" src="../static/imagenes/caratula.png">
+
+        <div class="introduccion_intro">
+    <h1>Convierte un texto en un audio , usa tus propias <span style="color: rgb(247, 85, 85);">Historias</span> o usa la <span style="color: rgb(40, 173, 0);">IA</span> </h1>
+    <p>Convierte palabras en audios en cuestión de segundos con el generador de audios IA. Escribe una descripción detallada y oberva como tus ideas se transforman en audio. </p>
+
+        <div id="contactoNav">
+            <a href="https://www.linkedin.com/in/h%C3%A9ctor-p%C3%A9rez-d%C3%ADaz-9b47752a1/" target="_blank" title="linkedin">
+     
+             <img src="../static/imagenes/linkedin.png"> 
+     
+            </a>
+         
+            <a href="https://github.com/dashboard" target="_blank" title="GitHub">
+             
+             <img src="../static/imagenes/github.png">
+            </a>
+    
+            <a href="mailto:contact@hectorpzdiaz.eu" target="_blank" title="contact@hectorpzdiaz.eu ">
+             
+             <img src="../static/imagenes/mail.png">
+            </a>
+         </div>
+        
+       
+    </div>
+      
+
+    </div>
+  
+    <div id="video_genero">
+        
+    <h2 >Elige <span style="color: rgb(2, 83, 189);">personaje </span></h2>
+    
+
+
+<div id="contenedor_video_ia">
+
+  <div class='genero_video'>
+
+  
+   
+  <div id="video_ia_mujer" >
+       <video id="videoMujer">
+        <source  src="../static/videos//video_chloe.mp4" >
+        
+       </video>
+    <div id="play_frase">
+   <p id="play_audio_mujer">Escuchar  voz </p>
+   <i id="botonPlayMujer"  class="fa fa-play" aria-hidden="true"></i>
+
+   </div>
+</div>
+    <h4 class="mujer" onclick="seleccionGeneroypruebaAudioMujer('Mujer')" >
+    Mujer ♀
+  
+    </h4 >
+      </div>
+
+   
+
+      <div class='genero_video'>
+   
+ 
+
+       <div id="video_ia_hombre">
+        <video   id="videoHombre">
+         <source  src="../static/videos/hector.mp4" >
+         
+        </video>
+   
+        <div id="play_frase">
+            <p id="play_audio_mujer">Escuchar  voz </p>
+            <i id="botonPlayHombre" class="fa fa-play" aria-hidden="true"></i>
+            </div>
+ 
+     </div>
+                
+    <h4 class="hombre" onclick="seleccionGeneroypruebaAudioHombre('Hombre')" >
+        Hombre ♂
+    </h4>
+     </div>
+     
+ </div>
+
+    </div>
+   
+    <div class="Frases_contenido">
+      
+   <h1 class="frase_inicio">  Elige la opción que más te convenga</h1>
+
+    <h1 class="frase_texto" style="display: none;">Crea  tu propia <span style="color: rgb(197, 13, 13);">Historia</span>  </h1>
+     <h1 class="frase_ia"style="display: none;">¿Listo para dejar que la <span style="color: rgb(40, 173, 0);">IA</span> desate tu creatividad? </h1>
+
+    
+    </div>
+    <div id="ia_original">
+
+        <h3 id="textoCreadoPorti" onclick="textoCreadoPorTi()">Texto creado por ti</h3>
+          <h3 id="textoCreadoPorIa" onclick="TextoCreadoPorIA()">Texto creado por IA</h3>
+
+
+    </div>
+
+
+   <div id="padre_contenedor_historias"  >
+
+    <div  id="convert_historia"  style="display: none;"  >
+
+     
+        <form id="formulario_convert_historia" method="POST" >
+            <span class="nombre_titulo">Titulo</span><br><br>
+            <input class="titulo" type="text" name="title" ><br><br>
+            <span class="nombre_titulo">Historia</span><br><br>
+            <div class="textarea">
+            <textarea  name="history" class="historia " ></textarea><br><br>
+             </div>
+      
+            <input class="send" type="submit" value="Generar audio ">
+            <input type="hidden" class="generos" name="genero" >
+
+
+
+
+        </form>
+       
+        <div id="sound_download" style="display: none;">
+          
+                <div class="descargar_audio">
+                <i id="play_descarga" class="fa fa-play" aria-hidden="true"></i>
+                <div class="ondas_sonido">
+                </div>
+               
+
+            </div>
+                <a  class="descarga" href="" download> Descargar</a>
+        
+         </div>
+
+    
+</div>
+
+<div  id="convert_historia_ia" style="display: none;" >
+
+    <form id="formulario_Prompt_Historia" method="GET">
+        <br><br>
+        <span class="nombre_titulo" > Especifica a la IA la historia que quieres crear , pon un titulo , pulsa enviar y espere</span><br><br>
+        <textarea class="creacion_ia"  name="creacion"></textarea><br><br>
+        <span class="nombre_titulo">Titulo</span><br><br>
+        <input class="titulo_ia" type="text" name="title_ia" ><br><br>
+
+        
+        <input type="submit" class="enviar_ia">
+        <input type="reset" class="resetear">
+      
+    
+
+
+    </form>
+   
+    <form  id="formulario_convert_historia_ia" method="POST"   >
+       <span class="nombre_titulo">Historia generada por la IA</span><br><br>
+       
+        <textarea  name="history_ia" class="historia_ia " ></textarea><br><br>
+       <input class="send" type="submit" value="Generar audio ">
+         <input type="hidden" class="generosIa" name="genero" >
+       
+
+    </form>
+         
+        <div id="sound_download_ia"  style="display: none;">
+        
+        <div class="descargar_audio">
+        <i id="play_descarga_ia" class="fa fa-play" aria-hidden="true"></i> 
+      
+        <div class="ondas_sonido_ia">
+        </div>
+            </div>
+            <a  class="descargar_ia" href="" download> Descargar</a>
+      
+       
+    </div>
+
+</div>
+
+
+</div>
+
+</header>
+
+<footer id="footer">
+    <div id="nameContacto">
+        <p>Contacto</p>
+    
+    </div>
+    
+    <div id="contactoFoteer">
+       <a href="https://www.linkedin.com/in/h%C3%A9ctor-p%C3%A9rez-d%C3%ADaz-9b47752a1/" target="_blank" title="linkedin">
+
+        <img src="../static/imagenes/linkedin.png">
+
+       </a>
+
+       <a href="https://github.com/dashboard" target="_blank" title="GitHub">
+        
+        <img src="../static/imagenes/github.png">
+       </a>
+       <a href="mailto:contact@hectorpzdiaz.eu" target="_blank" title="contact@hectorpzdiaz.eu ">
+        
+        <img src="../static/imagenes/mail.png">
+       </a>
+    </div>
+
+    <div id="nameFoteer">
+        <p>&copy; 2024 Héctor Pérez Díaz.</p>
+       
+
+    </div>
+</footer>
+
+
+   <script src="../static/javaScript/javaScript.js" type="text/javascript"></script>
+ 
+ 
+
+</body>
+
+</html>
+
+
