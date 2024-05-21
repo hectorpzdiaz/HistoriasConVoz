@@ -1,4 +1,4 @@
-# Text-to-Audio Generator
+# Historias con voz, generador de audios
 
 <p>Este proyecto permite convertir texto en audio, ofreciendo dos opciones:</p>
 
@@ -7,7 +7,7 @@
   <li><strong>Texto Generado por IA</strong>: Utiliza IA para crear texto automáticamente y luego conviértelo en audio.</li>
 </ul>
 
-<img src="static/imagenes/readmeHeader.png" widht="120px" height="120px">
+<img src="static/imagenes/readmeHeader.png" widht="180px" height="180px">
 
 <h2>Funcionalidades</h2>
 <ul>
@@ -16,7 +16,7 @@
   <li>Selección de voz entre femenina y masculina.</li>
 </ul>
 
-<img src="static/imagenes/personajes.png" widht="120px" height="120px">
+<img src="static/imagenes/personajes.png" widht="180px" height="180px">
 
 
 <h2>Requisitos</h2>
